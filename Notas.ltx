@@ -1,0 +1,207 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{url}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{diagbox}
+\usepackage{slashbox}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{cancel}
+\geometry{top=2cm, bottom=2cm, left=3cm, right=3cm}
+\spanishdecimal{.}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage[skip=10pt plus1pt, indent=40pt]{parskip}
+
+\begin{document}
+
+\title{Notas PhD Tesis}
+\date{Compilado: \today}
+\author{Zaldívar Vázquez Juan José\\ INAOE}
+
+\maketitle
+
+\setlength{\parindent}{0cm} \textbf{Supervisores}:\\
+Dr. Batta Márquez Aldo Alberto. Coordinación de Astrofísica, INAOE\\
+Dr. Cruz Osorio Alejandro. Instituto de Astronomía, UNAM
+
+
+\section{Relatividad General}
+
+\textcolor{blue}{Hacer un breve resumen sobre RG...}
+
+\textcolor{blue}{Halbar sobre la métrica, qué es, para qué se usa, etc...}
+
+
+%%  Revisar bien capítulo 8 de Rindler
+
+
+La teoría de la relatividad general fue postulada por Albert Einstein en 1915... De acuerdo con esta teoría la gravedad no es una fuerza sino que es producida por la curvatura del espacio-tiempo, esto implica que el tiempo ya no es una cantidad fija y constante, sino que es una dimensión extra cuya medición depende del observador...
+
+Como ahora la gravedad es una manifestación del espacio-tiempo, entonces la ecuación que se utilice debe relacionar la geometría del espacio-tiempo con la distribución de masa y energía del mismo. Esto se hace a través de las ecuaciones de campo de Einstein:
+
+\begin{equation}
+    R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R = 8 \pi T_{\mu \nu},
+\end{equation}
+
+o, escritas en forma equivalente
+
+\begin{equation}
+    R_{\mu \nu} = 8 \pi \left( T_{\mu \nu} - \frac{1}{2} g_{\mu \nu} T, \right)
+\end{equation}
+
+donde $R_{\mu \nu}$ representa la geometría del espacio-tiempo y $T_{\mu \nu}$ es el tensor de energía-momento. Estas son una serie de 10 ecuaciones...
+
+
+\section{Agujeros Negros}
+
+\textcolor{blue}{Hablar sobre qué es un AN y algunas de sus propiedades generales... \\ Hablar sobre la teoría de no-pelo...}
+
+
+\section{Métrica de Schwarzschild}
+
+En 1916, Schwarzschild encontró la primera solución exacta a las ecuaciones de Einstein. La solución se construye con las suposiciones de una métrica independiente del tiempo y esféricamente simétrica. Para la independencia del tiempo se escoge una coordenada $x^0 = ct$ tal que todos los componentes de la métrica son independientes de $t$ (no importa el signo):
+
+\begin{equation}
+    ds^2 = g_{ab} dx^a dx^b = g_{00} + g_{ij} dx^i dx^j, \quad (i,j = 1,2,3).
+\end{equation}
+
+Para imponer la simetría esférica es necesario que en una superficie con $t$ constante, se obtenga una coordenada radial $R$ tal que cuando $R$ sea constante las superficies sean esferas:
+
+\begin{equation}
+    g_{ij} dx^i dx^j = B^2 (R) dR^2 + C^2 (R) (d \theta^2 + \sin^2 \theta d \phi^2),
+\end{equation}
+
+ahora, como $g_{00}$ es solo función de $R$, la métrica toma la forma:
+
+\begin{equation}
+    ds^2 = e^{2 \lambda (r)} dt^2 + e^{2 \nu (r)} dr^2 + r^2 (d \theta^2 + \sin^2 \theta d \phi^2),
+\end{equation}
+
+en donde se toma $C(R) = R$ y la forma de $g_{tt}$ y $g_{rr}$ se escogen de esa forma por conveniencia para resolver las ecuaciones que se obtienen para cumplir la condición que $R_{\mu \nu} = 0$ ya que tenemos un espacio-tiempo vacío y por tanto el tensor energía-momento es nulo. De forma explícita, estas ecuaciones tienen la forma:
+
+\begin{align}
+    R_{tt} &= e^{2 \nu - 2 \lambda} \left( \lambda'' - \lambda' \nu' + \frac{2 \lambda'}{r} + \lambda'^2 \right),\\
+    R_{rr} &= - \lambda'' - \lambda'^2 + \lambda' \nu' + \frac{2 \nu'}{r},\\
+    R_{\theta \theta} &= e^{2 \nu} \left[ -1 + e^{-2 \nu} - r \left( \nu' - \lambda' \right) \right],\\
+    R_{\phi \phi} &= R_{\theta \theta} \sin^2 \theta,\\
+    R_{\mu \nu} &= 0, \quad \mu \neq \nu.
+\end{align}
+
+Al resolver el sistema de ecuaciones anterior se obtiene, en unidades naturales ($G = c =1$) se obtiene la métrica:
+
+\begin{equation}
+    ds^2 = - \left( 1 - \frac{2m}{r} \right) dt^2 + \left( 1 - \frac{2m}{r} \right)^{-1} dr^2 + r^2 (d \theta^2 + \sin^2 \theta d \phi^2).
+\end{equation}
+
+Esta métrica tiene la propiedad que cuando $r \rightarrow \infty$ se recupera la métrica de Minkoski, es decir, una métrica plana. Además, cuando $r = 0$ y $r = 2m$ la métrica pierde sentido haciendo que en este intervalo ($r < 2m$) se tiene una zona de desconexión. Al radio $r \equiv r_s = 2m (= 2GM / c^2)$ se le llama radio de Schwarzschild.
+
+
+\section{Solución Reissner-Nordstrom}
+
+La estrellas poseen un campo magnético que se genera debido a las corrientes en su interior, y un campo eléctrico debido a una distribución arbitraria de carga interna; y su materia caliente emite radiación electromagnética.
+
+Si en esta ocasión tomamos la simetría esférica, un campo gravitacional estático sin materia, pero con una campo eléctrico radial, es decir, $E = f(r) \hat{e}, \ B = 0$. Utilizando como la fuente de las ecuaciones de campo de Einstein el tensor de energía-momento del campo electrico dado por $E = (Q / r^2) \hat{r}$. Al resolver para la métrica se obtiene la llamada solución de Reissner-Nordstrom:
+
+\begin{equation}
+    ds^2 = - \left( 1 - \frac{2m}{r} + \frac{Q^2}{r^2} \right) dt^2 + \left( 1 - \frac{2m}{r} + \frac{Q^2}{r^2} \right)^{-1} dr^2 + r^2 (d \theta^2 + \sin^2 \theta d \phi^2),
+\end{equation}
+
+que, es la misma solución que la métrica de Schwarzschild, con el añadido del campo eléctrico afectando la parte temporal y radial de la métrica. Lo cual es buendo ya que cuando $Q \rightarrow 0$, recuperamos la métrica de un espacio-tiempo vacío. Por otro lado, en el límite de $Q > M$, la solución de Reissner-Nordstrom se comporta bien desde $r \rightarrow \infty$ hasta $r = 0$, en donde se tiene una singularidad \textcolor{blue}{(Esta parte no me queda muy clara que se cumple porque tenemos que se vuelve singular cuando $1 - 2m / r + Q^2 / r^2 = 0$, es decir $r = m \pm \sqrt{m^2 - Q^2}$)}.
+
+
+\section{Solución de Kerr}
+
+Todos los objetos en el universo tienen una cierta rotación. Un caso específico es cuando una configuración de masa, por ejemplo una estrella, que inicialmente estaba rotando colapsa, el agujero negro resultante debe mantener cierta rotación. Digamos que tiene un cierto momento angular intínsico $J \neq 0$, sin embargo muy pequeño. La métrica resultante debe ser la de un agujero negro sin deformaciones, rotando lentamente, es decir:
+
+\begin{equation}
+    \begin{split}
+        ds^2 = &- \left( 1 - \frac{2m}{r} \right) dt^2 + \left( 1 - \frac{2m}{r} \right)^{-1} dr^2 + r^2 (d \theta^2 + \sin^2 \theta d \phi^2)\\
+        &- \left( \frac{4 J \sin \theta}{r^2} \right) (r \sin \theta d \phi) dt 
+    \end{split}
+\end{equation}
+
+Entonces, tenemos la solución de Schwarzschild con una corrección rotacional, sin embargo, esta es una mala aproximación ya que cuando se tiene un objeto rotando la simetría esférica se rompe y se deben hacer más correcciones. En la solución de Schwarzschild teníamos un objeto central estático, sólo dependiente de la masa $m$. Sin embargo, la solución de Kerr depende también del momento angular $J$, combinando ambas variables se introduce el momento angular específico como $a \equiv J/m$. La solución, en coordenadas Boyer-Lindquist es:
+
+\begin{equation}
+    ds^2 = - \Sigma^{-1} \Delta (dt - a \sin^2 \theta d \phi)^2 + \Sigma ( \Delta^{-1} dr^2 + d \theta^2) + \Sigma^{-1} \sin^2 \theta [(r^2 + a^2) d \phi - a dt]^2,
+\end{equation}
+
+donde:
+
+\begin{equation}
+    \Sigma = r^2 + a^2 \cos^2 \theta, \ \Delta = r^2 - 2mr + a^2.
+\end{equation}
+
+De esta métrica se recupera la solución de Schwarzschild al tomar el límite cuando $a \rightarrow 0$, es decir, cuando no hay rotación.
+
+Una singularidad se encuentra cuando $\Sigma = 0$, esto se cumple para $r = |a \cos \theta|$, de tal forma no es suficiente que la única forma que se pierda el sentido físico cuando $r = 0$ es necesario que $\theta = \pi / 2$. Aquí, las superficies a $r$ constante en esta ocasión no son superficies esféricas ya que al tener un sistema en rotación, las superficies que se forman son elipsoides achatados, de tal forma que en $r = 0$ se forma un disco cuya frontera es en $\theta = \pi /2$. Así, en lugar de tener un punto como singularidad, se tiene un anillo. Otra singularidad surge cuando $\Delta = 0$, para esto se debe cumplir que $r_{\pm} = m \pm \sqrt{m^2 - a^2}$, para que esto se cumpla, $a^2 \leq m^2$.
+
+
+\subsection{Coordenadas Kerr-Eddington}
+
+Se introduce un nuevo sistema de coordenadas $(T, R, \Theta, \Phi)$ en función de las coordenadas anteriores como:
+
+\begin{equation}
+    \begin{split}
+        dT &= dt + 2mrdr / \Delta, \\
+        dR &= dr, \\
+        d \Theta &= d \theta, \\
+        d \Phi &= d \phi - adr / \Delta.
+    \end{split}
+\end{equation}
+
+Con este cambio de coordenadas la métrica toma la forma:
+
+\begin{equation}
+    \begin{split}
+        ds^2 &= - dT^2 + dR^2 + 2a \sin^2 \Theta dR d \Phi + \Sigma d \Theta^2 + (R^2 + a^2) \sin^2 \Theta d \phi^2 \\
+        &- \left( \frac{2mR}{\Sigma} \right) (dR + a \sin^2 \Theta d \Phi + dT)^2.
+    \end{split}
+\end{equation}
+
+Lo único particular que tiene esta transformación es que la métrica se escribe en formas diferenciales, lo que hace que $ds^2$ se reescriba más fácil. Con este cambio de la métrica se elimina el uso de $\Delta$ en la métrica, y por tanto también las singularidades asociadas a esta variable.
+
+
+\subsection{Coordenadas Kerr-Schild}
+
+Otro sistema de coordenadas que es útil para representar la solución de Kerr se ve haciendo el cambio de coordenadas:
+
+\begin{align}
+    x + iy &= (R - ia) e^{i \Phi} \sin \Theta, \\
+    z &= R \cos \Theta, \\
+    \tau &= T.
+\end{align}
+
+En este sistema de coordenadas, la métrica es:
+
+\begin{equation}
+    \begin{split}
+        ds^2 &= - d \tau^2 + dx^2 + dy^2 + dz^2 \\
+        &- \frac{2mR^3}{R^4 + a^2 z^2} \left[ \frac{R (xdx + ydy) + a (xdy - ydx)}{R^2 + a^2} + \frac{zdz}{R} - d \tau^2 \right],
+    \end{split}
+\end{equation}
+
+donde se debe cumplir que:
+
+\begin{equation}
+    R^4 - (x^2 + y^2 + z^2 - a^2)R^2 - a^2 z^2 = 0.
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+Este sistema de coordenadas también se conocen como quasi-Minkoskianas ya que cumplen la propiedad
+
+
+\end{document}
