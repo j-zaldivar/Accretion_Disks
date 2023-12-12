@@ -213,7 +213,43 @@ Se debe resolver la ecuación de Klein-Gordon
     \Box \Psi = \frac{1}{\sqrt{-g}} \partial_{\alpha} \left[ \sqrt{-g} g^{\alpha \beta} \partial_{\beta} \Psi \right]  = \mu^2 \Psi
 \end{equation}
 
+Las soluciones para los agujeros negros de Kerr con pelo escalar (KBHsSH, Kerr Black Holes with Scalar Hair) se obtienen utilizando el siguiente ansatz para la métrica y el campo escalar
 
+\begin{equation}
+	ds^2 = e^{2F_1} \left( \frac{dr^2}{N} + r^2 d \theta^2 \right) + e^{2F_2} r^2 \sin^2 \theta (d \varphi - Wdt)^2 - e^{2F_0} N dt^2; \quad \quad N = 1 - \frac{r_H}{r}
+\end{equation}
+
+con esto, la matriz asociada es
+
+\begin{equation}
+	g_{\mu \nu} 
+	=
+	\begin{pmatrix}
+		e^{2F_2} r^2 \sin^2 \theta W^2 - e^{2F_0}N & 0 & 0 & e^{2F_2} Wr^2 \sin^2 \theta \\
+		0 & \frac{e^{2F_1}}{N} & 0 & 0 \\
+		0 & 0 & e^{2F_1}r^2 & 0\\
+		e^{2F_2}Wr^2 \sin^2 \theta & 0 & 0 & e^{2F_2} r^2 \sin^2 \theta
+	\end{pmatrix}
+\end{equation}
+
+de donde se obtiene que
+
+\begin{equation}
+	\sqrt{-g} = e^{F_0 + 2F_1 + F_2} r^2 \sin \theta
+\end{equation}
+
+y la matriz inversa:
+
+\begin{equation}
+	g^{\mu \nu} 
+	=
+	\begin{pmatrix}
+		-\frac{e^{2F_0}}{N} & 0 & 0 & e^{-2F_0} \frac{W}{N} \\
+		0 & e^{-2F_1} N & 0 & 0 \\
+		0 & 0 & \frac{e^{-2F_1}}{r^2} & 0\\
+		e^{-2F_0} \frac{W}{N} & 0 & 0 & \frac{e^{-2F_2}}{r^2 \sin^2 \theta} - e^{-2F_0} \frac{W^2}{N}
+	\end{pmatrix}
+\end{equation}
 
 
 \end{document}
